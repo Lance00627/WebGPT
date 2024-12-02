@@ -2,7 +2,4 @@
     "github": {
         "silent": true
     },
-    "rewrites": [
-        { "source": "/nextchat/:path*", "destination": "/" }
-    ]
 }
