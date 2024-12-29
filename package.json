@@ -57,7 +57,8 @@
     "rt-client": "https://github.com/Azure-Samples/aoai-realtime-audio-sdk/releases/download/js/v0.5.0/rt-client-0.5.0.tgz",
     "@clerk/nextjs": "^4.29.1",
     "@prisma/client": "^5.7.1",
-    "@aws-sdk/client-s3": "^3.485.0"
+    "@aws-sdk/client-s3": "^3.485.0",
+    "svix": "^1.2.0"
   },
   "devDependencies": {
     "@tauri-apps/api": "^1.6.0",
