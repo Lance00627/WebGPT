@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-page-custom-font */
+import { ClerkProvider } from "@clerk/nextjs";
 import "./styles/globals.scss";
 import "./styles/markdown.scss";
 import "./styles/highlight.scss";
@@ -48,24 +49,26 @@ export default function RootLayout({
         ></link>
         <script src="/serviceWorkerRegister.js" defer></script>
       </head>
-      <body>
-        {children}
-        {serverConfig?.isVercel && (
-          <>
-            <SpeedInsights />
-          </>
-        )}
-        {serverConfig?.gtmId && (
-          <>
-            <GoogleTagManager gtmId={serverConfig.gtmId} />
-          </>
-        )}
-        {serverConfig?.gaId && (
-          <>
-            <GoogleAnalytics gaId={serverConfig.gaId} />
-          </>
-        )}
-      </body>
+      <ClerkProvider>
+        <body>
+          {children}
+          {serverConfig?.isVercel && (
+            <>
+              <SpeedInsights />
+            </>
+          )}
+          {serverConfig?.gtmId && (
+            <>
+              <GoogleTagManager gtmId={serverConfig.gtmId} />
+            </>
+          )}
+          {serverConfig?.gaId && (
+            <>
+              <GoogleAnalytics gaId={serverConfig.gaId} />
+            </>
+          )}
+        </body>
+      </ClerkProvider>
     </html>
   );
 }

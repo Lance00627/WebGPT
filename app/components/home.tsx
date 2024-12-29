@@ -159,8 +159,8 @@ function Screen() {
   const isSdNew = location.pathname === Path.SdNew;
 
   const isMobileScreen = useMobileScreen();
-  const shouldTightBorder =
-    getClientConfig()?.isApp || (config.tightBorder && !isMobileScreen);
+  // 强制 shouldTightBorder 为 true，使其始终为全屏模式
+  const shouldTightBorder = true;
 
   useEffect(() => {
     loadAsyncGoogleFont();

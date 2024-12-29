@@ -74,6 +74,18 @@
   }
 }
 
+.sidebar-bar-button {
+  &:global(.cl-userButton-root) {
+    height: 35px;
+    
+    button {
+      height: 100%;
+      padding: 0;
+      border-radius: var(--sidebar-button-radius);
+    }
+  }
+}
+
 .sidebar-drag {
   $width: 14px;
 

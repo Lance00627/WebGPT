@@ -30,6 +30,7 @@ import { isIOS, useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
 import { showConfirm, Selector } from "./ui-lib";
 import clsx from "clsx";
+import { UserButton } from "@clerk/nextjs";
 
 const DISCOVERY = [
   { name: Locale.Plugin.Name, path: Path.Plugins },
@@ -242,6 +243,11 @@ export function SideBar(props: { className?: string }) {
         shouldNarrow={shouldNarrow}
       >
         <div className={styles["sidebar-header-bar"]}>
+          {/* 添加 UserButton */}
+          <div className={styles["sidebar-bar-button"]}>
+            <UserButton afterSignOutUrl="/sign-in" />
+          </div>
+
           <IconButton
             icon={<MaskIcon />}
             text={shouldNarrow ? undefined : Locale.Mask.Name}

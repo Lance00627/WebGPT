@@ -46,3 +46,8 @@ dev
 *.key.pub
 
 masks.json
+
+.history
+
+# 确保不要忽略 prisma/schema.prisma
+!prisma/schema.prisma
