@@ -16,7 +16,7 @@ model User {
 }
 
 model Chat {
-  id        String    @id @default(uuid())
+  id        String    @id @default(cuid())
   userId    String
   user      User      @relation(fields: [userId], references: [id])
   messages  Message[]
@@ -26,9 +26,9 @@ model Chat {
 }
 
 model Message {
-  id        String   @id @default(uuid())
+  id        String   @id @default(cuid())
   chatId    String
-  chat      Chat     @relation(fields: [chatId], references: [id])
+  chat      Chat     @relation(fields: [chatId], references: [id], onDelete: Cascade)
   role      String
   content   String
   createdAt DateTime @default(now())
